@@ -443,8 +443,8 @@ function VikingMinimap:OnDocumentReady()
 		wndOptionsBtn:SetCheck(self.tToggledIcons[eType])
 	end
 
-	if g_wndTheVikingMinimap == nil then
-		g_wndTheVikingMinimap = self.wndVikingMinimap
+	if g_wndVikingMinimap == nil then
+		g_wndVikingMinimap = self.wndVikingMinimap
 	end
 end
 
@@ -540,7 +540,7 @@ function VikingMinimap:OnRestore(eType, tSavedData)
 end
 
 function VikingMinimap:OnWindowManagementReady()
-	Event_FireGenericEvent("WindowManagementAdd", {wnd = self.wndMain, strName = Apollo.GetString("VikingMinimap_Title")})
+	Event_FireGenericEvent("WindowManagementAdd", {wnd = self.wndMain, strName = Apollo.GetString("Minimap_Title")})
 end
 
 ---------------------------------------------------------------------------------------------------
@@ -1322,7 +1322,7 @@ function VikingMinimap:OnGenerateTooltip(wndHandler, wndControl, eType, nX, nY)
 				["name"] = Apollo.GetString("CRB_Unit"),
 				["count"] = nCount
 			}
-			xml:AddLine(String_GetWeaselString(Apollo.GetString("VikingMinimap_OtherUnits"), tInfo), crWhite, "CRB_InterfaceMedium")
+			xml:AddLine(String_GetWeaselString(Apollo.GetString("Minimap_OtherUnits"), tInfo), crWhite, "CRB_InterfaceMedium")
 		elseif nObjectCount > 5 then
 			-- Do nothing
 		elseif tObject.strName == "" then

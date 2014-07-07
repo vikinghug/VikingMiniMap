@@ -37,13 +37,13 @@ local kcrFishingNode = CColor.new(0.2, 1.0, 1.0, 1.0)
 
 local ktPvPZoneTypes =
 {
-	[GameLib.CodeEnumZonePvpRules.None] 					= "",
-	[GameLib.CodeEnumZonePvpRules.ExileStronghold]			= Apollo.GetString("Minimap_Exile"),
-	[GameLib.CodeEnumZonePvpRules.DominionStronghold] 		= Apollo.GetString("Minimap_Dominion"),
-	[GameLib.CodeEnumZonePvpRules.Sanctuary] 				= Apollo.GetString("Minimap_Sanctuary"),
-	[GameLib.CodeEnumZonePvpRules.Pvp] 						= Apollo.GetString("Minimap_PvP"),
-	[GameLib.CodeEnumZonePvpRules.ExilePVPStronghold] 		= Apollo.GetString("Minimap_Exile"),
-	[GameLib.CodeEnumZonePvpRules.DominionPVPStronghold] 	= Apollo.GetString("Minimap_Dominion"),
+  [GameLib.CodeEnumZonePvpRules.None]                  = "",
+  [GameLib.CodeEnumZonePvpRules.ExileStronghold]       = Apollo.GetString("MiniMap_Exile"),
+  [GameLib.CodeEnumZonePvpRules.DominionStronghold]    = Apollo.GetString("MiniMap_Dominion"),
+  [GameLib.CodeEnumZonePvpRules.Sanctuary]             = Apollo.GetString("MiniMap_Sanctuary"),
+  [GameLib.CodeEnumZonePvpRules.Pvp]                   = Apollo.GetString("MiniMap_PvP"),
+  [GameLib.CodeEnumZonePvpRules.ExilePVPStronghold]    = Apollo.GetString("MiniMap_Exile"),
+  [GameLib.CodeEnumZonePvpRules.DominionPVPStronghold] = Apollo.GetString("MiniMap_Dominion"),
 }
 
 local ktInstanceSettingTypeStrings =
@@ -66,39 +66,39 @@ function VikingMinimap:new(o)
 end
 
 function VikingMinimap:CreateOverlayObjectTypes()
-	self.eObjectTypePublicEvent			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypePublicEventKill		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeChallenge			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypePing				= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeCityDirection		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeHazard 				= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeQuestReward 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeQuestReceiving 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeQuestNew 			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeQuestNewSoon 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeQuestTarget 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeQuestKill	 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeTradeskills 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeVendor 				= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeAuctioneer 			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeCommodity 			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeInstancePortal 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeBindPointActive 	= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeBindPointInactive 	= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeMiningNode 			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeRelicHunterNode 	= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeSurvivalistNode 	= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeFarmingNode 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeFishingNode 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeVendorFlight 		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeFlightPathNew		= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeNeutral	 			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeHostile	 			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeFriend	 			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeRival	 			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeTrainer	 			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectTypeGroupMember			= self.wndVikingMinimap:CreateOverlayType()
-	self.eObjectPvPMarkers				= self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypePublicEvent       = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypePublicEventKill   = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeChallenge         = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypePing              = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeCityDirection     = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeHazard            = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeQuestReward       = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeQuestReceiving    = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeQuestNew          = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeQuestNewSoon      = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeQuestTarget       = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeQuestKill         = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeTradeskills       = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeVendor            = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeAuctioneer        = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeCommodity         = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeInstancePortal    = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeBindPointActive   = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeBindPointInactive = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeMiningNode        = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeRelicHunterNode   = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeSurvivalistNode   = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeFarmingNode       = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeFishingNode       = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeVendorFlight      = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeFlightPathNew     = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeNeutral           = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeHostile           = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeFriend            = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeRival             = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeTrainer           = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectTypeGroupMember       = self.wndVikingMinimap:CreateOverlayType()
+  self.eObjectPvPMarkers            = self.wndVikingMinimap:CreateOverlayType()
 end
 
 function VikingMinimap:BuildCustomMarkerInfo()
@@ -633,7 +633,7 @@ function VikingMinimap:UpdatePvpFlag()
 	local nZoneRules = GameLib.GetCurrentZonePvpRules()
 
 	if GameLib.IsPvpServer() == true then
-		self.wndPvPFlagName:Show(false)
+		self.wndPvPFlagName:Show(true)
 	else
 		self.wndPvPFlagName:Show(nZoneRules ~= GameLib.CodeEnumZonePvpRules.DominionPVPStronghold and nZoneRules ~= GameLib.CodeEnumZonePvpRules.ExilePVPStronghold)
 	end

@@ -540,7 +540,7 @@ function VikingMinimap:OnRestore(eType, tSavedData)
 end
 
 function VikingMinimap:OnWindowManagementReady()
-	Event_FireGenericEvent("WindowManagementAdd", {wnd = self.wndMain, strName = Apollo.GetString("MiniMap_Title")})
+	Event_FireGenericEvent("WindowManagementAdd", {wnd = self.wndMain, strName = "Viking Mini Map"})
 end
 
 ---------------------------------------------------------------------------------------------------

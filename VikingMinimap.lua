@@ -630,15 +630,15 @@ function VikingMinimap:OnUnitPvpFlagsChanged(unitChanged)
 end
 
 function VikingMinimap:UpdatePvpFlag()
-  local nZoneRules = GameLib.GetCurrentZonePvpRules()
+	local nZoneRules = GameLib.GetCurrentZonePvpRules()
 
-  if GameLib.IsPvpServer() == true then
-    self.wndPvPFlagName:Show(true)
-  else
-    self.wndPvPFlagName:Show(nZoneRules ~= GameLib.CodeEnumZonePvpRules.DominionPVPStronghold and nZoneRules ~= GameLib.CodeEnumZonePvpRules.ExilePVPStronghold)
-  end
+	if GameLib.IsPvpServer() == true then
+		self.wndPvPFlagName:Show(true)
+	else
+		self.wndPvPFlagName:Show(nZoneRules ~= GameLib.CodeEnumZonePvpRules.DominionPVPStronghold and nZoneRules ~= GameLib.CodeEnumZonePvpRules.ExilePVPStronghold)
+	end
 
-  self.wndPvPFlagName:SetText(ktPvPZoneTypes[nZoneRules] or "")
+	self.wndPvPFlagName:SetText(ktPvPZoneTypes[nZoneRules] or "")
 end
 
 ---------------------------------------------------------------------------------------------------
